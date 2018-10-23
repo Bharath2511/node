@@ -17,8 +17,17 @@ console.log(fs.readdir('./',(err,files)=>{
 
 
 //Register
-emitter.on('messageLogged',()=>{
-    console.log('listener called')
+emitter.on('messageLogged',(arg)=>{
+    console.log('listener called',arg)
 })
 //raise an event
-emitter.emit('messageLogged')
+emitter.emit('messageLogged',{ id : 1,url :"http://"})
+
+
+//Register
+emitter.on('logging',(arg)=>{
+    console.log('listener called',arg)
+})
+//raise an event
+emitter.emit('logging',{module :'js'})
+
