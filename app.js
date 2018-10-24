@@ -1,17 +1,5 @@
-const http = require('http')
+var _ = require('underscore')
 
-const server = http.createServer((req,res)=>{ 
-    if(req.url=='/') {
-        res.write('hello')
-        res.end()
-    }
-    if(req.url=='/courser') {
-        res.write(JSON.stringify([1,2,3]))
-        res.end()
-    }
-})
+var result = _.contains([1,2,3],3)
 
-server.listen(2500)
-
-
-console.log('listening on port 2500')
+console.log(result)
