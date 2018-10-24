@@ -1,36 +1,17 @@
-const path = require('path')
-const os = require('os')
-//const EventEmitter = require('events')
-//const emitter = new EventEmitter()
-const fs = require('fs')
+const http = require('http')
 
-var pathObj = path.parse(__filename)
-console.log(pathObj)
- console.log(os.totalmem(),os.freemem())
-
-console.log(fs.readdirSync('./'))
-console.log(fs.readdir('./',(err,files)=>{
-    if (err) console.log(err)
-    else console.log(files)
-
-}))
-
-
-
-const Logger = require('./logger')
-const logger = new Logger()
-
-//Register
-logger.on('messageLogged',(arg)=>{
-    console.log('listener called',arg)
+const server = http.createServer((req,res)=>{ 
+    if(req.url=='/') {
+        res.write('hello')
+        res.end()
+    }
+    if(req.url=='/courser') {
+        res.write(JSON.stringify([1,2,3]))
+        res.end()
+    }
 })
 
-
-//Register
-logger.on('logging',(arg)=>{
-    console.log('listener called',arg)
-})
+server.listen(2500)
 
 
-logger.log('message')
-
+console.log('listening on port 2500')
