@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Bharath2511/node/issues"
   },
-  "homepage": "https://github.com/Bharath2511/node#readme"
+  "homepage": "https://github.com/Bharath2511/node#readme",
+  "dependencies": {
+    "underscore": "^1.9.1"
+  }
 }
