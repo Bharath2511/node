@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Bharath2511/node#readme",
   "dependencies": {
+    "mongoose": "^5.3.6",
     "underscore": "^1.9.1"
   }
 }
